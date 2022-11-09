@@ -28,11 +28,8 @@ function LayoutPage() {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={["1"]}
+          style={{ height: "100vh" }}
           items={[
-            {
-              key: "0",
-              // label: <Button onClick={handleLogout}>Log out</Button>,
-            },
             {
               key: "1",
               label: <Link to={"/crud"}>CRUD</Link>,
@@ -45,20 +42,6 @@ function LayoutPage() {
         />
       </Sider>
       <Layout className="site-layout">
-        <Header
-          className="site-layout-background"
-          style={{
-            padding: 0,
-          }}
-        >
-          {React.createElement(
-            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-            {
-              className: "trigger",
-              onClick: () => setCollapsed(!collapsed),
-            }
-          )}
-        </Header>
         <Content
           className="site-layout-background"
           style={{
