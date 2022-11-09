@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Login from "./components/login";
+import "antd/dist/antd.css";
+import { Route, Routes } from "react-router-dom";
+import CRUD from "./components/CRUD";
+import Register from "./components/register";
+import CRUDUSer from "./components/CRUDUser";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route index path="/login" element={<Login />} />
+        <Route index path="/register" element={<Register />} />
+        <Route path="/crud" element={<CRUD />} />
+        <Route path="/crud-user" element={<CRUDUSer />} />
+      </Routes>
     </div>
   );
 }
